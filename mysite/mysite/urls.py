@@ -19,6 +19,7 @@ from mysite import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.home_page),
     path('about-us/', views.about_us),
     path('course/', views.course),
     path('course/<int:courseid>', views.course_details),
