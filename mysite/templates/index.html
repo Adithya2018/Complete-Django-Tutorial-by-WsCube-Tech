@@ -4,9 +4,34 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Home Page</title>
+		<title>{{title}}</title>
 	</head>
 	<body>
-		<h1>Welcome to WsCubeTech</h1>
+		<h1>{{bdata}}</h1>
+		<p>{{clist}}</p>
+
+		{% for n in clist %}
+		<div>{{forloop.counter}}. {{n}}</div>
+		{% endfor %}
+
+		<table border="1" cellpadding="10">
+			<tr>
+				<th>Name</th>
+				<th>Phone Number</th>
+			</tr>
+
+			{% for d in student_details %}
+			<tr>
+				<td>{{d.name}}</td>
+				<td>{{d.phone}}</td>
+			</tr>
+			{% endfor %}
+		</table>
+
+		{% if numbers|length > 0 %} {% for i in numbers %} {% if i > 20 %}
+		<div>{{i}}</div>
+		{% endif %} {% endfor %} {% else %}
+		<div>No Data found</div>
+		{% endif %}
 	</body>
 </html>
